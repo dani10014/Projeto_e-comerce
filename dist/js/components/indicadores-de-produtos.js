@@ -1,0 +1,1 @@
+function indicarProdutosNoCarrinhoEFavoritos(){}export{indicarProdutosNoCarrinhoEFavoritos};

@@ -1,0 +1,39 @@
+@use "./fontes";
+@use "./variaveis";
+
+header{
+    margin: 0;
+    padding: variaveis.$spacing-md 0;
+    .cabecalho{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 0 variaveis.$spacing-xs;
+        position: relative;
+        &__menu-hamburguer{
+            font-size: variaveis.$font-xxl;
+            cursor: pointer;
+            padding: variaveis.$spacing-sm;
+            position: relative;
+            &:hover{
+                color: rgb(134, 134, 134);
+            }
+        }
+        &__nome-loja{
+            font-size: variaveis.$font-xxl;
+            @include fontes.fontePrincipal;
+            text-shadow: 2px 5px 5px black;
+            margin: 0;
+        }
+        &__carrinho{
+            font-size: variaveis.$font-xxl;
+            cursor: pointer;
+            color: #fff;
+            padding: variaveis.$spacing-sm;
+            &:hover{
+                color: rgb(134, 134, 134);
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+function iniciarCarroselSlick(){$(".container-base-card").slick({slidesToShow:2,slidesToScroll:1,dots:!0,arrows:!1,mobileFirst:!0,responsive:[{breakpoint:768,settings:{slidesToShow:3}},{breakpoint:992,settings:{slidesToShow:4}}]}),$(".menu-vertical__imagens-produto").slick({slidesToShow:1,slidesToScroll:1,dots:!0,arrows:!1})}export{iniciarCarroselSlick};
