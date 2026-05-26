@@ -94,6 +94,7 @@ export function filtrarProdutos(){
 
             containerRoupas.innerHTML = "";
             containerTenis.innerHTML = "";
+            
 
             /* separacao de produto por categoria */
             const produtosBlusa = produtosComEssaFaixa.filter(item => item.categoria === "blusa");

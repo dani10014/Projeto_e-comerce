@@ -208,7 +208,7 @@ export function IniciarMenuVertical(){
                 const id = card.dataset.id;
                 const corSelecionada = document.querySelector(".botoes-selecao-cores.active");
                 const tamanhoSelecionado = document.querySelector(".botoes-selecao-tamanho.active");
-                const quantidadeSelecionada = parseInt(quantidade.innerText);
+                let quantidadeSelecionada = parseInt(quantidade.innerText);
                 
 
 
@@ -216,12 +216,20 @@ export function IniciarMenuVertical(){
                     return;
                 } 
 
-                const produtoEscolhido = {id: id, nome: produtoEncontrado.nome, cor: corSelecionada.style.backgroundColor, tamanho: tamanhoSelecionado.innerText,valor: produtoEncontrado.preco,imagem: produtoEncontrado.imagem ,quantidade: quantidadeSelecionada}
+                let produtoIgual = produtosExistentesNaMemoria.find(item => item.cor === corSelecionada.style.backgroundColor && item.tamanho === tamanhoSelecionado.innerText && item.id === id);
 
-                produtosExistentesNaMemoria.push(produtoEscolhido);
+                if(produtoIgual){
+                    produtoIgual.quantidade += quantidadeSelecionada;
+                    quantidade.innerText ++ 
+                }else{
 
-                localStorage.setItem("produtosCarrinho",JSON.stringify(produtosExistentesNaMemoria));
+                    const produtoEscolhido = {id: id, nome: produtoEncontrado.nome, cor: corSelecionada.style.backgroundColor, tamanho: tamanhoSelecionado.innerText,valor: produtoEncontrado.preco,imagem: produtoEncontrado.imagem ,quantidade: quantidadeSelecionada}
+
+                    produtosExistentesNaMemoria.push(produtoEscolhido);
+
                 
+                }
+                localStorage.setItem("produtosCarrinho",JSON.stringify(produtosExistentesNaMemoria));
                 indicarProdutosNoCarrinhoEFavoritos()
 
         /**Logica de aviso de adicao */
