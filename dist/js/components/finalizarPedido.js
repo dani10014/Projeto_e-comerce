@@ -1,0 +1,1 @@
+function ouvinteFinalizarPedido(){var e=document.querySelector(".botao-carrinho");document.querySelector(".menu-finalizacao-de-pedido");e.addEventListener("click",function(){})}export{ouvinteFinalizarPedido};

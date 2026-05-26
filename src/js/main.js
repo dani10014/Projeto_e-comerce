@@ -8,6 +8,8 @@ import { iniciarTrocaImagenOferta } from './components/troca-de-imagens-oferta.j
 import { inicarRenderizacaoProdutosCarrinhos } from './components/renderizarCarrinho.js';
 import { filtrarProdutos } from './components/botao-filtrar-produtos.js';
 import { indicarProdutosNoCarrinhoEFavoritos } from './components/indicador-notificacao.js';
+import { ouvinteFinalizarPedido } from './components/finalizarPedido.js';
+
 
 if(document.querySelector(".produtos-camisas .container-base-card")){
     await buscarProdutos();
@@ -44,4 +46,8 @@ if(window.location.pathname.includes("carrinho.html")){
 
 if(document.querySelector(".pesquisa__botao-filtrar")){
     filtrarProdutos();
+}
+
+if(document.querySelector(".botao-carrinho")){
+    ouvinteFinalizarPedido();
 }
