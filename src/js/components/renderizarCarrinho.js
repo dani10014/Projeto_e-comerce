@@ -49,7 +49,7 @@ export function inicarRenderizacaoProdutosCarrinhos() {
         containerCardsCarrinho.appendChild(cardProduto);
     });
 
-    const cardExistentes = document.querySelectorAll(".card");
+    const cardExistentes = document.querySelectorAll(".base-cards-carrinho .card");
 
     let somaDosValores = 0;
 
@@ -65,7 +65,7 @@ export function inicarRenderizacaoProdutosCarrinhos() {
         somaDosValores += valorTotalDoCard; 
     });
         IndicadorTotal.innerText = `R$ ${somaDosValores.toFixed(2).replace('.', ',')}`;
-
+''
     const botaoRemover = document.querySelectorAll(".botao-remover__botao");
     
     botaoRemover.forEach(btnDeletar => {

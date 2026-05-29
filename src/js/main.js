@@ -32,7 +32,7 @@ if(document.querySelector(".card")){
     IniciarMenuVertical();
 }
 
-if(document.querySelector("#seta-voltar-home")){
+if(document.querySelector(".cabecalho h1").innerText === "Favoritos"){
     criarCardFavoritos();
 }
 

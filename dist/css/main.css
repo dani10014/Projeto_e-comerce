@@ -1006,6 +1006,59 @@ main .produtos-favoritados .card-body h3::before {
   content: "•";
 }
 
+#container-finalizar {
+  display: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  position: fixed;
+  filter: opacity(0);
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+@media (max-width: 500px) {
+  #container-finalizar {
+    width: 90%;
+  }
+}
+#container-finalizar input {
+  border: none;
+  transition: all 0.3s ease-in-out;
+  background-color: #a5a5a5;
+  color: #ffffff;
+  padding: 10px;
+}
+#container-finalizar input:focus {
+  outline: none !important;
+  color: #fff;
+}
+#container-finalizar label {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+#container-finalizar .botao-opcao-pagamento {
+  background-color: #a5a5a5;
+  padding: 20px 0;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+#container-finalizar .botao-opcao-pagamento:hover {
+  background-color: black;
+  border: 1px solid rgb(49, 0, 71);
+}
+#container-finalizar.menu-ativo {
+  display: block;
+  filter: opacity(1);
+}
+#container-finalizar.botao-ativo-pagamento {
+  background-color: seagreen;
+}
+
 body {
   background: #000000;
   background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(49, 0, 71) 97%);

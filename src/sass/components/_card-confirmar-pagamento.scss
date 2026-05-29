@@ -1,0 +1,51 @@
+@use "./variaveis";
+@use "./fontes";
+
+#container-finalizar{
+    display: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    position: fixed;
+    filter: opacity(0);
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:100;
+    @media (max-width:500px){
+        width: 90%;
+    }
+
+        input{
+            border: none;
+            transition: all 0.3s ease-in-out;
+            background-color: variaveis.$corInputs;
+            color: #ffffff;
+            padding: 10px;
+            &:focus{
+                outline: none !important;
+                color: #fff;
+            }
+        }
+        label{
+            @include fontes.fontePrincipal;
+            margin-bottom: 10px;
+        }
+        .botao-opcao-pagamento{
+                background-color:variaveis.$corInputs;
+                padding: 20px 0;
+                color: #fff;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover{
+                    background-color: black;
+                    border: 1px solid  rgba(49, 0, 71, 1);
+            }
+        }
+        &.menu-ativo{
+            display: block;
+            filter: opacity(1);
+        }
+        &.botao-ativo-pagamento{
+            background-color: seagreen;
+        }
+    }

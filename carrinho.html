@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - EchoModa</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Carousels & Icons -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Bootstrap & Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/css/main.css">
 </head>
 <body>
@@ -22,27 +26,94 @@
             <h1 class="mb-0 cabecalho__nome-loja">Carrinho</h1>
         </div>
     </header>
+
     <main>
         <div class="container">
             <div class="base-cards-carrinho">
-                
+                <!-- Inserido dinamicamente via JS -->
             </div>
         </div>
-            <div class="botao-finalizar-compra">
-                <div class="botao-mais-e-menos">
-                    <h5 class="mb-0">Total</h5>
-                    <h6 class="valor-total mb-0">R$ 0 </h6>
-                </div>
-                <div class="botao-carrinho">Finalizar</div>
-            </div>  
-        <div class="menu-finalização-de-pedido">
-            <div class="container">
-                <div class="container">
-                    
-                </div>
+
+        <div class="botao-finalizar-compra">
+            <div class="botao-mais-e-menos">
+                <h5 class="mb-0">Total</h5>
+                <h6 class="valor-total mb-0">R$ 0</h6>
             </div>
+            <div class="botao-carrinho">Finalizar</div>
+        </div>  
+
+        <!-- Container Finalizar Pedido -->
+        <div class="container mb-5 mt-5 container-finalizar bg-light" id="container-finalizar">
+            <div class="cabecalho py-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <i class="fas fa-map-marker-alt text-primary me-2"></i> Finalizar Pedido
+                </div>
+                <button class="btn btn-close" aria-label="Close"></button>
+            </div>
+            
+            <div class="card-body">
+                <form>
+                    <!-- Linha do CEP -->
+                    <div class="row align-items-end py-2">
+                        <div class="col-8 d-flex flex-column">
+                            <label for="cep">CEP</label>
+                            <input type="number" id="cep" class="form-control" placeholder="00000000">
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-primary w-100">Buscar</button>
+                        </div>
+                    </div>
+
+                    <!-- Linha de Endereço e Número -->
+                    <div class="row py-2">
+                        <div class="col-8 d-flex flex-column">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco" class="form-control" placeholder="Rua Exemplo">
+                        </div>
+                        <div class="col-4 d-flex flex-column">
+                            <label for="numero">Número</label>
+                            <input type="number" id="numero" class="form-control" placeholder="000">
+                        </div>
+                    </div>
+
+                    <!-- Linha de Complemento e UF -->
+                    <div class="row py-2">
+                        <div class="col-8 d-flex flex-column">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" id="complemento" class="form-control" placeholder="Casa, Ap, Bloco">
+                        </div>
+                        <div class="col-4 d-flex flex-column">
+                            <label for="uf">UF</label>
+                            <input type="text" id="uf" class="form-control" placeholder="SP" maxlength="2">
+                        </div>
+                    </div>
+
+                    <!-- Opções de Pagamento -->
+                    <div class="row py-3 g-2">
+                        <div class="col-6">
+                            <div class="botao-opcao-pagamento border p-3 rounded text-center style-pointer">
+                                <h5 class="mb-0">PIX</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="botao-opcao-pagamento border p-3 rounded text-center style-pointer">
+                                <h5 class="mb-0">CARTÃO</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Prosseguir -->
+                    <div class="botao-prosseguir-pagamento pt-2">
+                        <button type="submit" class="btn btn-success w-100 py-2 mb-2">Prosseguir</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="backdrop-glass">
+                
         </div>
     </main>
+
+    <script type="module" src="./dist/js/main.js"></script>
 </body>
-<script type="module" src="./dist/js/main.js"></script>
 </html>
