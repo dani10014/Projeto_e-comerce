@@ -32,7 +32,6 @@
         transition: 0.3s ease-in-out;
         &:focus{
             outline: none !important;
-            border: 1px solid #fff !important;
             background-color:variaveis.$corBotoes;
             color: #fff;
         }
