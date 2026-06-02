@@ -141,6 +141,7 @@ export function IniciarMenuVertical(){
                         </div>
 
                         <h5 class="menu-vertical__texto-descricao-produto">Descrição do produto</h5>
+                        <p class="menu-vertical__descricao-produto">${produtoEncontrado.descricao}</p>
                     </div>
                 </div>
             </div>

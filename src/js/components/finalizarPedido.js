@@ -42,28 +42,15 @@ export function ouvinteFinalizarPedido(){
                     return
                 }
 
-                const xht = new XMLHttpRequest();
-                
                 const endPoint = `https://viacep.com.br/ws/${espacoCep.value.trim()}/json/`;
-
-                xht.open("GET",endPoint);
-
-                xht.onload = function(){
-                    if(xht.status === 200){
-                        const resposta = JSON.parse(xht.responseText)
-
-                    if (resposta.erro) {
-                        alert("CEP não encontrado!");
-                        return;
-                    }
-                        espacoCidade.value = resposta.localidade;
-                        espacoUf.value = resposta.uf;
-
-                    }else{
-                        alert("Erro ao conectar com o serviço de CEP.");
-                    }
-                }
-                xht.send()
+                
+                fetch(endPoint).then(function(resposta){
+                    return resposta.json();
+                })
+                .then(function(resposta){
+                    espacoCidade.value = resposta.localidade;
+                    espacoUf.value = resposta.uf;
+                })
             })
 
             /** Coleta de selecão de forma pagamento**/

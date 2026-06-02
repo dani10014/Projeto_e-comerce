@@ -31,8 +31,10 @@
         border-radius: 10px;
         height: 350px;
         margin-bottom: 50px;
+        transition: all 0.3s ease-in-out;
         &:hover{
-            transform: scale(1.5);
+            transform: scale(2);
+            
         }
         @media (min-width: 750px){
             object-fit:contain;
@@ -179,6 +181,13 @@
     &__texto-descricao-produto{
         margin-top: variaveis.$spacing-2xl;
         color: black;
+    }
+    &__descricao-produto{
+        margin-top: variaveis.$spacing-sm;
+        color: black;
+        @include fontes.fonteNomeProdutos;
+        text-align: left;
+        font-size: variaveis.$font-sm;
     }
 }
 .botao-adicionar-carrinho{
